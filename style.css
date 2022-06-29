@@ -1,0 +1,309 @@
+/*Reset*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+img,
+fieldset,
+a img {
+  border: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+}
+input[type="submit"],
+button {
+  cursor: pointer;
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+button {
+  background: none;
+}
+textarea {
+  overflow: auto;
+}
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+div,
+input,
+textarea,
+select,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+a:focus {
+  outline: none;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Base */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #c0dbd9;
+  height: 100%;
+}
+.header {
+  padding: 30px;
+  background: #7faff7;
+  height: 100px;
+}
+.btn {
+  padding: 8px 15px;
+  background: #a5c7f9;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*popup*/
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 400ms;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+.popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup__inner {
+  position: relative;
+  padding: 15px;
+  width: 370px;
+  height: 370px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: #7faff6;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__close:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+.popup__close:after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+.popup__close:hover {
+  opacity: 0.5;
+  background: red;
+  transition: 400ms;
+}
+
+
+/*Main content*/
+.main__content {
+  background: #b3f95a;
+  margin: 15px 0 15px;
+  counter-reset: e;
+  display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  gap: 15px;
+}
+.main__content__item {
+  height: 198px;
+  background: #8ad191;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__content__item:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 5;
+}
+.main__content__item:nth-child(2) {
+    grid-area: 1 / 5 / 2 / 11;
+}
+.main__content__item:nth-child(3) {
+    grid-area: 1 / 11 / 2 / 13;
+}
+.main__content__item:nth-child(4) {
+    grid-area: 2 / 1 / 3 / 11;
+}
+.main__content__item:nth-child(5) {
+    grid-area: 2 / 11 / 3 / 13;
+}
+.main__content__item:before {
+  counter-increment: e;
+  content: counter(e);
+}
+
+/*Second content*/
+.second__content {
+  background: #88b5bf;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin-bottom: 100px;
+  padding: 30px;
+}
+.second__content__item {
+  width: 255px;
+  height: 199px;
+  background: #0d89b0;
+}
+
+/*Footer*/
+footer {
+  background: #7faff7;
+  height: 100px;
+}
